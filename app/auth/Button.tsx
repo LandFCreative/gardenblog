@@ -29,3 +29,5 @@ export const Button = (props: Props) => {
     <div onClick={() => signIn()} className="text-white bg-black p-4 cursor-pointer">Sign In</div>
   )
 }
+
+// default<P>(options): OAuthConfig< P >

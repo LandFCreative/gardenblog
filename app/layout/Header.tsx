@@ -2,19 +2,25 @@
 import React from 'react'
 import Link from 'next/link'
 import { Button as AuthButton } from "../auth/Button";
-import { SessionProvider } from 'next-auth/react';
+// import { SessionProvider } from 'next-auth/react';
+import { getUserSession } from '@lib/session'
 
-type Props = {}
-
-const Header = (props: Props) => {
+export default async function Header() {
+  const user = await getUserSession()
   return (
-    <SessionProvider>
-      <div className='border-b flex justify-between'>
-        <Link href="/" className="text-4xl px-2 py-4">LOGO</Link>
-        <AuthButton />
-      </div>
-    </SessionProvider>
+    <main className="">
+    {JSON.stringify(user)}
+    </main>
   )
 }
 
-export default Header
+// const Header = (props: Props) => {
+//   return (
+//     <SessionProvider>
+//       <div className='border-b flex justify-between'>
+//         <Link href="/" className="text-4xl px-2 py-4">LOGO</Link>
+//         <AuthButton />
+//       </div>
+//     </SessionProvider>
+//   )
+// }
