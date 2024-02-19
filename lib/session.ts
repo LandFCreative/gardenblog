@@ -12,6 +12,7 @@ export const getUserSession = async (): Promise<User> => {
       session
     }
   })
-  if (!authUserSession) throw new Error('unauthorized')
-  return authUserSession.user
+  if (!authUserSession) {
+    ('unauthorized')}
+  return null
 }
